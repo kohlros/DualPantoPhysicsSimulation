@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 275367419}
   - component: {fileID: 275367418}
   - component: {fileID: 275367417}
-  - component: {fileID: 275367416}
+  - component: {fileID: 275367421}
   m_Layer: 0
   m_Name: LinearForceField
   m_TagString: Untagged
@@ -143,22 +143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &275367416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275367415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9939db03754c9e64eb962ed8327f1340, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onUpper: 1
-  onLower: 0
-  direction: {x: 0, y: 0, z: 1}
-  strength: 0.3
 --- !u!65 &275367417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -237,6 +221,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275367421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275367415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc095ae8ced04b45b113ffc8561ff15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onUpper: 1
+  onLower: 0
+  strength: 0.29
+  isAttractive: 0
 --- !u!1001 &300899750
 PrefabInstance:
   m_ObjectHideFlags: 0
