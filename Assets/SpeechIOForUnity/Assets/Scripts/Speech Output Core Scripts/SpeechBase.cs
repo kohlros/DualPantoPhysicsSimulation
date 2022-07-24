@@ -8,7 +8,7 @@ public abstract class SpeechBase
         GERMAN,
         JAPANESE
     };
-    public static LANGUAGE Language = LANGUAGE.ENGLISH;
+    public static LANGUAGE Language = LANGUAGE.GERMAN;
     public static bool isSpeaking = false;
     public static float speed = 1.0f;
     public abstract void Init(int outputchannel);
