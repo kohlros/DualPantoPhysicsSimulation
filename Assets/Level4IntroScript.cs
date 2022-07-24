@@ -11,7 +11,7 @@ public class Level4IntroScript : MonoBehaviour
     async void Start()
     {
         speech = new SpeechOut();
-        speech.SetLanguage(SpeechBase.LANGUAGE.GERMAN);
+        // speech.SetLanguage(SpeechBase.LANGUAGE.GERMAN);
         await speech.Speak("Du bist nun in einem Magnetfeld. Bewege dich vorsichtig im Kreis.");
     }
 

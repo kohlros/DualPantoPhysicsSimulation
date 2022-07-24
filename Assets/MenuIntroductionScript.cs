@@ -25,8 +25,13 @@ public class MenuIntroductionScript : MonoBehaviour
     //     //Debug.Log("Hello!"); // system says hello
     //     await speechIn.Listen(new string[] { "hello", "hi", "hey" }); //wait for greet 
     //     //await Task.Delay(2000); // wait 2s 
-        await speechOut.Speak("Select a level !");
-        string level = await speechIn.Listen(new string[] { "one", "two", "three","four","repeat" }); //wait for response
+        await speechOut.Speak("There are the following levels:");
+        await speechOut.Speak("Level one: static electric particles.");
+        await speechOut.Speak("Level two: uniform electric field.");
+        await speechOut.Speak("Level three: dynamic electric particles");
+        await speechOut.Speak("Level four: magnetic field");
+        await speechOut.Speak("Level five: gravity");
+        string level = await speechIn.Listen(new string[] { "one", "two", "three","four","five", "repeat" }); //wait for response
         switch (level)
         { // switch response
             case "one":
@@ -44,6 +49,10 @@ public class MenuIntroductionScript : MonoBehaviour
             case "four":
                 await speechOut.Speak("Selected level four.");
                 LoadLevel(3);
+                break;
+            case "five":
+                await speechOut.Speak("Selected level five.");
+                LoadLevel(4);
                 break;
             case "repeat":
                 Dialog();

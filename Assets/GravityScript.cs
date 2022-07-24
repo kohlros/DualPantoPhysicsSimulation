@@ -31,7 +31,7 @@ public class GravityScript : MonoBehaviour
 
         if(force > 0.5) {force = 0.5f;}
         // Debug.Log("Test. force:" + force + "distance between:" + objToAttract.tf.position + "and" + gameObject.transform.position);
-        Debug.Log("Test: force:" + force + "from" + g+ m2 + mass);
+        Debug.Log("Test: force:" + force + "from" + g+ m2 + mass); 
         upperHandle.ApplyForce(direction.normalized, force);
     }
 

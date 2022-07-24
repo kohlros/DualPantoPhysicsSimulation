@@ -28,7 +28,7 @@ public class PlayerMagnaticFieldScript : MonoBehaviour
         if(forceStrength > 0.5) {forceStrength = 0.5f;}
         movementDirection = previousPosition - currentPosition;
         forceDirection = Vector3.Cross(movementDirection, fieldDirection).normalized;
-        Debug.Log("Test:" + forceDirection);
+        // Debug.Log("Test:" + forceDirection);
         previousPosition = currentPosition;
         upperHandle.ApplyForce(forceDirection, forceStrength);
     }
