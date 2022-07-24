@@ -18,10 +18,7 @@ public class PlayerChargeScript : MonoBehaviour
     }
 
     void FixedUpdate(){
-        // if(meCharge <= 4f){
-        //     meCharge += 0.1f;
-        // }
-        // Debug.Log("meCharge:" + meCharge);
+        //use transform rotation with range [-180,180] (with stop in the middle)
         currentAngle = upperHandle.GetRotation();
         angleDiff = zeroAngle - currentAngle; 
         meCharge = Mathf.Abs((angleDiff/360)*10);
