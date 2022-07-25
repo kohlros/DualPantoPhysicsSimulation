@@ -12,6 +12,7 @@ namespace DualPantoFramework
      
         // charge of the it-Particle 
         public float itCharge = 1f;
+        private float otherCharge;
         private float strength;
 
         protected override float GetCurrentStrength(Collider other)
@@ -19,16 +20,25 @@ namespace DualPantoFramework
             // discard enabled stuff 
             // use actual formular for electric force between particles. 
             float distance = Vector3.Distance(other.transform.position, gameObject.transform.position);
-            float meCharge = PlayerChargeScript.meCharge; 
-            strength = (meCharge * itCharge)/ (distance * distance); 
-            if(strength > 0.4) {return 0.4f;} else { return strength;}
-
+            otherCharge = PlayerChargeScript.meCharge; 
+            strength = (otherCharge * itCharge)/ (distance * distance);
+            strength = Mathf.Abs(strength);
+            Debug.Log("Test. force:" + strength); 
+            if(strength > 0.6) {
+                return 0.6f;
+                }else 
+            { 
+                if(strength< -0.6 ) {return -0.6f;}else{ return strength;}
+            }
         }
 
         protected override Vector3 GetCurrentForce(Collider other)
         {
-
-            return -(gameObject.transform.position - other.transform.position).normalized;
+            if(Mathf.Sign(itCharge) == Mathf.Sign(otherCharge)){
+                return -(gameObject.transform.position - other.transform.position).normalized;
+            }else{
+                return (gameObject.transform.position - other.transform.position).normalized;
+            }
         }
     }
 }
